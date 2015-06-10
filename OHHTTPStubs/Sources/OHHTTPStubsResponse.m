@@ -102,6 +102,11 @@ const double OHHTTPStubsDownloadSpeedWifi   =- 12000 / 8; // kbps -> KB/s
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Initializers
 
+- (instancetype)init {
+    self = [self initWithError:[NSError errorWithDomain:NSCocoaErrorDomain code:NSFeatureUnsupportedError userInfo:nil]];
+    return self;
+}
+
 -(instancetype)initWithInputStream:(NSInputStream*)inputStream
                           dataSize:(unsigned long long)dataSize
                         statusCode:(int)statusCode
