@@ -144,7 +144,7 @@ const double OHHTTPStubsDownloadSpeedWifi   =- 12000 / 8; // kbps -> KB/s
         inputStream = [NSInputStream inputStreamWithData:[NSData data]];
     }
     
-    NSDictionary* attributes = [NSFileManager.defaultManager attributesOfItemAtPath:filePath error:nil];
+    NSDictionary* attributes = filePath ? [NSFileManager.defaultManager attributesOfItemAtPath:filePath error:nil] : @{};
     unsigned long long fileSize = [[attributes valueForKey:NSFileSize] unsignedLongLongValue];
     self = [self initWithInputStream:inputStream
                             dataSize:fileSize
