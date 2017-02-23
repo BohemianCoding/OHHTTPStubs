@@ -142,9 +142,18 @@ const double OHHTTPStubsDownloadSpeedWifi   =- 12000 / 8; // kbps -> KB/s
 
 -(instancetype)initWithFileAtPath:(NSString*)filePath
                        statusCode:(int)statusCode
-                          headers:(nullable NSDictionary*)httpHeaders
+                          headers:(NSDictionary*)httpHeaders
 {
     NSURL *fileURL = filePath ? [NSURL fileURLWithPath:filePath] : nil;
+  
+    if (!fileURL) {
+        NSLog(@"%s: nil file path. Returning empty data", __PRETTY_FUNCTION__);
+        return [self initWithInputStream:[NSInputStream inputStreamWithData:[NSData data]]
+                                dataSize:0
+                              statusCode:statusCode
+                                 headers:httpHeaders];
+    }
+
     self = [self initWithFileURL:fileURL
                       statusCode:statusCode
                          headers:httpHeaders];
