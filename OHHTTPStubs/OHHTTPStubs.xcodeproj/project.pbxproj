@@ -814,6 +814,9 @@
 					093442DD1B80EC4A00A91535 = {
 						LastSwiftMigration = 0800;
 					};
+					095981C119806A7900807DBE = {
+						LastSwiftMigration = 0900;
+					};
 					095981D119806A7900807DBE = {
 						LastSwiftMigration = 0800;
 						TestTargetID = 095981C119806A7900807DBE;
