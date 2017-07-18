@@ -43,7 +43,7 @@ static NSTimeInterval const kSlotTime = 0.25; // Must be >0. We will send a chun
 
 @interface OHHTTPStubs()
 + (instancetype)sharedInstance;
-@property(atomic, copy) NSMutableArray* stubDescriptors;
+@property(atomic, strong) NSMutableArray* stubDescriptors;
 @property(atomic, assign) BOOL enabledState;
 @property(atomic, copy, nullable) void (^onStubActivationBlock)(NSURLRequest*, id<OHHTTPStubsDescriptor>, OHHTTPStubsResponse*);
 @property(atomic, copy, nullable) void (^onStubRedirectBlock)(NSURLRequest*, NSURLRequest*, id<OHHTTPStubsDescriptor>, OHHTTPStubsResponse*);
@@ -85,6 +85,8 @@ static NSTimeInterval const kSlotTime = 0.25; // Must be >0. We will send a chun
 #pragma mark - OHHTTPStubs Implementation
 
 @implementation OHHTTPStubs
+
+@synthesize stubDescriptors = _stubDescriptors;
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Singleton methods
@@ -149,6 +151,14 @@ static NSTimeInterval const kSlotTime = 0.25; // Must be >0. We will send a chun
 +(void)removeAllStubs
 {
     [OHHTTPStubs.sharedInstance removeAllStubs];
+}
+
+- (NSMutableArray*)stubDescriptors {
+    return _stubDescriptors;
+}
+
+- (void)setStubDescriptors:(NSMutableArray *)stubDescriptors {
+    _stubDescriptors = [stubDescriptors mutableCopy];
 }
 
 #pragma mark > Disabling & Re-Enabling stubs
