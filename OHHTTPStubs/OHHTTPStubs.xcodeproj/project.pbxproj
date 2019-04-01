@@ -815,7 +815,7 @@
 						LastSwiftMigration = 0800;
 					};
 					095981C119806A7900807DBE = {
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1000;
 					};
 					095981D119806A7900807DBE = {
 						LastSwiftMigration = 0800;
@@ -1332,7 +1332,8 @@
 				MODULEMAP_FILE = "$(SRCROOT)/Supporting Files/module.modulemap";
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Debug;
@@ -1383,7 +1384,8 @@
 				MODULEMAP_FILE = "$(SRCROOT)/Supporting Files/module.modulemap";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1534,6 +1536,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.alisoftware.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = OHHTTPStubs;
 				SDKROOT = macosx;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Debug;
@@ -1560,6 +1564,8 @@
 				PRODUCT_NAME = OHHTTPStubs;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Release;
