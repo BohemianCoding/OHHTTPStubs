@@ -157,7 +157,7 @@
 			};
 			buildConfigurationList = 099F74021AE2D049001108A5 /* Build configuration list for PBXProject "OHHTTPStubsDemo" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
