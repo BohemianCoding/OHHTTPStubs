@@ -817,9 +817,8 @@
 						LastSwiftMigration = 0800;
 					};
 					095981C119806A7900807DBE = {
-						DevelopmentTeam = WUGMZZ5K46;
 						LastSwiftMigration = 1020;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 					095981D119806A7900807DBE = {
 						LastSwiftMigration = 0800;
