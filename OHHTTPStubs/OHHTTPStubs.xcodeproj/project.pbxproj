@@ -268,6 +268,7 @@
 		1D6DB84F1B763B7A00FCF855 /* OHHTTPStubs+Mocktail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OHHTTPStubs+Mocktail.m"; sourceTree = "<group>"; };
 		221C34A41B0CCF0600FCA8FF /* OHPathHelpersTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OHPathHelpersTests.m; sourceTree = "<group>"; };
 		221C34A61B0CCF9D00FCA8FF /* empty.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = empty.bundle; sourceTree = "<group>"; };
+		433A13A722862FEB00B8F8F0 /* BCCodeSigning.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = BCCodeSigning.xcconfig; path = ../../../BCFoundation/Configs/BCCodeSigning.xcconfig; sourceTree = "<group>"; };
 		451243C1FC2A423646391951 /* Pods-TestingPods-OHHTTPStubs iOS Fmk Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestingPods-OHHTTPStubs iOS Fmk Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestingPods-OHHTTPStubs iOS Fmk Tests/Pods-TestingPods-OHHTTPStubs iOS Fmk Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		46C732901CDAC2DB00CDBCB5 /* login_content_type_and_headers.tail */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = login_content_type_and_headers.tail; sourceTree = "<group>"; };
 		46C732911CDAC2DB00CDBCB5 /* login_content_type.tail */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = login_content_type.tail; sourceTree = "<group>"; };
@@ -539,6 +540,7 @@
 		095981C519806A7900807DBE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				433A13A722862FEB00B8F8F0 /* BCCodeSigning.xcconfig */,
 				09199FCC1BD973800014376D /* OHHTTPStubsUmbrella.h */,
 				09199FCE1BD974E80014376D /* module.modulemap */,
 				093442DC1B80EC3B00A91535 /* OHHTTPStubs iOS-Info.plist */,
@@ -816,6 +818,7 @@
 					};
 					095981C119806A7900807DBE = {
 						LastSwiftMigration = 1020;
+						ProvisioningStyle = Automatic;
 					};
 					095981D119806A7900807DBE = {
 						LastSwiftMigration = 0800;
@@ -1515,6 +1518,7 @@
 		};
 		095981E119806A7900807DBE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 433A13A722862FEB00B8F8F0 /* BCCodeSigning.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -1545,6 +1549,7 @@
 		};
 		095981E219806A7900807DBE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 433A13A722862FEB00B8F8F0 /* BCCodeSigning.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
