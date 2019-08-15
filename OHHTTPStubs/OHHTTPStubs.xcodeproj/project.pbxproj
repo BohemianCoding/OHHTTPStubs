@@ -56,7 +56,7 @@
 		0959818D1980682E00807DBE /* TimingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0959814D1980668E00807DBE /* TimingTests.m */; };
 		0959818E1980682E00807DBE /* WithContentsOfURLTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0959814E1980668E00807DBE /* WithContentsOfURLTests.m */; };
 		095981D319806A7900807DBE /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09110A5219805F4800D175E4 /* XCTest.framework */; };
-		095981D719806A7900807DBE /* OHHTTPStubsMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 095981C219806A7900807DBE /* OHHTTPStubsMac.framework */; };
+		095981D719806A7900807DBE /* OHHTTPStubs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 095981C219806A7900807DBE /* OHHTTPStubs.framework */; };
 		095981EF19806AA200807DBE /* NilValuesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 095981491980668E00807DBE /* NilValuesTests.m */; };
 		095981F019806AA200807DBE /* NSURLConnectionDelegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0959814A1980668E00807DBE /* NSURLConnectionDelegateTests.m */; };
 		095981F119806AA200807DBE /* NSURLConnectionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0959814B1980668E00807DBE /* NSURLConnectionTests.m */; };
@@ -252,7 +252,7 @@
 		0959819819806A4200807DBE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0959819919806A4200807DBE /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		0959819A19806A4200807DBE /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
-		095981C219806A7900807DBE /* OHHTTPStubsMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OHHTTPStubsMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		095981C219806A7900807DBE /* OHHTTPStubs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OHHTTPStubs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		095981C619806A7900807DBE /* OHHTTPStubs Mac-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OHHTTPStubs Mac-Info.plist"; sourceTree = "<group>"; };
 		095981D219806A7900807DBE /* OHHTTPStubs Mac Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "OHHTTPStubs Mac Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		095B1AD31AE30BA7009D1B56 /* OHPathHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OHPathHelpers.h; sourceTree = "<group>"; };
@@ -334,7 +334,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				095981D319806A7900807DBE /* XCTest.framework in Frameworks */,
-				095981D719806A7900807DBE /* OHHTTPStubsMac.framework in Frameworks */,
+				095981D719806A7900807DBE /* OHHTTPStubs.framework in Frameworks */,
 				DCC5BE75D7490EBB6625E45C /* libPods-TestingPods-OHHTTPStubs Mac Tests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -383,7 +383,7 @@
 			children = (
 				09110A4119805F4800D175E4 /* libOHHTTPStubs.a */,
 				09110A5119805F4800D175E4 /* OHHTTPStubs iOS Lib Tests.xctest */,
-				095981C219806A7900807DBE /* OHHTTPStubsMac.framework */,
+				095981C219806A7900807DBE /* OHHTTPStubs.framework */,
 				095981D219806A7900807DBE /* OHHTTPStubs Mac Tests.xctest */,
 				725CD99B1A9EB65100F84C8B /* OHHTTPStubs.framework */,
 				093442F91B80EC4A00A91535 /* OHHTTPStubs iOS Fmk Tests.xctest */,
@@ -718,7 +718,7 @@
 			);
 			name = "OHHTTPStubs Mac Framework";
 			productName = "OHHTTPStubs Mac";
-			productReference = 095981C219806A7900807DBE /* OHHTTPStubsMac.framework */;
+			productReference = 095981C219806A7900807DBE /* OHHTTPStubs.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		095981D119806A7900807DBE /* OHHTTPStubs Mac Tests */ = {
@@ -817,9 +817,8 @@
 						LastSwiftMigration = 0800;
 					};
 					095981C119806A7900807DBE = {
-						DevelopmentTeam = WUGMZZ5K46;
 						LastSwiftMigration = 1020;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 					095981D119806A7900807DBE = {
 						LastSwiftMigration = 0800;
@@ -1540,7 +1539,7 @@
 				INSTALL_PATH = "@rpath";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.alisoftware.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = OHHTTPStubsMac;
+				PRODUCT_NAME = OHHTTPStubs;
 				SDKROOT = macosx;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.2;
@@ -1568,7 +1567,7 @@
 				INSTALL_PATH = "@rpath";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.alisoftware.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = OHHTTPStubsMac;
+				PRODUCT_NAME = OHHTTPStubs;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
