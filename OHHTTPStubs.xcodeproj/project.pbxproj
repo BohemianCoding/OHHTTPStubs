@@ -791,32 +791,32 @@
 		09110A3919805F4800D175E4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0710;
+				LastSwiftUpdateCheck = 1140;
 				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = AliSoftware;
 				TargetAttributes = {
 					09110A5019805F4800D175E4 = {
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 1140;
 						TestTargetID = 09110A4019805F4800D175E4;
 					};
 					093442DD1B80EC4A00A91535 = {
-						LastSwiftMigration = 1020;
+						LastSwiftMigration = 1140;
 					};
 					095981C119806A7900807DBE = {
-						LastSwiftMigration = 1130;
+						LastSwiftMigration = 1140;
 						ProvisioningStyle = Automatic;
 					};
 					095981D119806A7900807DBE = {
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 1140;
 						TestTargetID = 095981C119806A7900807DBE;
 					};
 					725CD99A1A9EB65100F84C8B = {
 						CreatedOnToolsVersion = 6.1.1;
-						LastSwiftMigration = 1020;
+						LastSwiftMigration = 1140;
 					};
 					EA100AB61BE15BE400129352 = {
 						CreatedOnToolsVersion = 7.1;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 1140;
 					};
 				};
 			};
