@@ -257,7 +257,6 @@
 		1FCC5CEC22FD95D700472F5B /* login_content_type.tail */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = login_content_type.tail; sourceTree = "<group>"; };
 		1FCC5CEE22FD95D700472F5B /* MocktailTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MocktailTests.m; sourceTree = "<group>"; };
 		1FE7BADB223157DB00FFF120 /* OHHTTPStubsProject.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = OHHTTPStubsProject.xcconfig; sourceTree = "<group>"; };
-		433A13A722862FEB00B8F8F0 /* BCCodeSigning.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = BCCodeSigning.xcconfig; path = ../../BCFoundation/Configs/BCCodeSigning.xcconfig; sourceTree = "<group>"; };
 		451243C1FC2A423646391951 /* Pods-TestingPods-OHHTTPStubs iOS Fmk Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestingPods-OHHTTPStubs iOS Fmk Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestingPods-OHHTTPStubs iOS Fmk Tests/Pods-TestingPods-OHHTTPStubs iOS Fmk Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		4F8E695A8205C9F383F637AB /* libPods-TestingPods-OHHTTPStubs Mac Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TestingPods-OHHTTPStubs Mac Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		655D2E61F142E992FA46C016 /* Pods-TestingPods-OHHTTPStubs tvOS Fmk Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestingPods-OHHTTPStubs tvOS Fmk Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestingPods-OHHTTPStubs tvOS Fmk Tests/Pods-TestingPods-OHHTTPStubs tvOS Fmk Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -534,7 +533,6 @@
 		1FCC5CD322FD95D700472F5B /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				433A13A722862FEB00B8F8F0 /* BCCodeSigning.xcconfig */,
 				1FCC5CE222FD95D700472F5B /* Fixtures */,
 				1FCC5CED22FD95D700472F5B /* MocktailTests */,
 				1FB9F02922FFC0CF0027737A /* OHHTTPStubsTests */,
@@ -1400,7 +1398,6 @@
 		};
 		095981E119806A7900807DBE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 433A13A722862FEB00B8F8F0 /* BCCodeSigning.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				APPLICATION_EXTENSION_API_ONLY = YES;
@@ -1427,7 +1424,6 @@
 		};
 		095981E219806A7900807DBE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 433A13A722862FEB00B8F8F0 /* BCCodeSigning.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				APPLICATION_EXTENSION_API_ONLY = YES;
