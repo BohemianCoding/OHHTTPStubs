@@ -28,8 +28,8 @@ class MainViewController: UIViewController {
 
         installTextStub(self.installTextStubSwitch)
         installImageStub(self.installImageStubSwitch)
-        OHHTTPStubs.onStubActivation { (request: URLRequest, stub: OHHTTPStubsDescriptor, response: OHHTTPStubsResponse) in
-            print("[OHHTTPStubs] Request to \(request.url!) has been stubbed with \(stub.name)")
+        HTTPStubs.onStubActivation { (request: URLRequest, stub: HTTPStubsDescriptor, response: HTTPStubsResponse) in
+            print("[OHHTTPStubs] Request to \(request.url!) has been stubbed with \(String(describing: stub.name))")
         }
     }
 
@@ -37,13 +37,13 @@ class MainViewController: UIViewController {
     // MARK: - Global stubs activation
 
     @IBAction func toggleStubs(_ sender: UISwitch) {
-        OHHTTPStubs.setEnabled(sender.isOn)
+        HTTPStubs.setEnabled(sender.isOn)
         self.delaySwitch.isEnabled = sender.isOn
         self.installTextStubSwitch.isEnabled = sender.isOn
         self.installImageStubSwitch.isEnabled = sender.isOn
         
         let state = sender.isOn ? "and enabled" : "but disabled"
-        print("Installed (\(state)) stubs: \(OHHTTPStubs.allStubs)")
+        print("Installed (\(state)) stubs: \(HTTPStubs.allStubs())")
     }
     
 
@@ -67,20 +67,20 @@ class MainViewController: UIViewController {
         }
     }
 
-    weak var textStub: OHHTTPStubsDescriptor?
+    weak var textStub: HTTPStubsDescriptor?
     @IBAction func installTextStub(_ sender: UISwitch) {
         if sender.isOn {
             // Install
-
-            textStub = stub(condition: isExtension("txt")) { _ in
-                let stubPath = OHPathForFile("stub.txt", type(of: self))
+            let stubPath = OHPathForFile("stub.txt", type(of: self))
+            textStub = stub(condition: isExtension("txt")) { [weak self] _ in
+                let useDelay = DispatchQueue.main.sync { self?.delaySwitch.isOn ?? false }
                 return fixture(filePath: stubPath!, headers: ["Content-Type":"text/plain"])
-                    .requestTime(self.delaySwitch.isOn ? 2.0 : 0.0, responseTime:OHHTTPStubsDownloadSpeedWifi)
+                    .requestTime(useDelay ? 2.0 : 0.0, responseTime:OHHTTPStubsDownloadSpeedWifi)
             }
             textStub?.name = "Text stub"
         } else {
             // Uninstall
-            OHHTTPStubs.removeStub(textStub!)
+            HTTPStubs.removeStub(textStub!)
         }
     }
     
@@ -98,25 +98,27 @@ class MainViewController: UIViewController {
         NSURLConnection.sendAsynchronousRequest(req, queue: OperationQueue.main) { (_, data, _) in
             sender.isEnabled = true
             if let receivedData = data {
-                self.imageView.image = UIImage(data: receivedData)
+                DispatchQueue.main.async {
+                    self.imageView.image = UIImage(data: receivedData)
+                }
             }
         }
     }
     
-    weak var imageStub: OHHTTPStubsDescriptor?
+    weak var imageStub: HTTPStubsDescriptor?
     @IBAction func installImageStub(_ sender: UISwitch) {
         if sender.isOn {
             // Install
-            
-            imageStub = stub(condition: isExtension("png") || isExtension("jpg") || isExtension("gif")) { _ in
-                let stubPath = OHPathForFile("stub.jpg", type(of: self))
+            let stubPath = OHPathForFile("stub.jpg", type(of: self))
+            imageStub = stub(condition: isExtension("png") || isExtension("jpg") || isExtension("gif")) { [weak self] _ in
+                let useDelay = DispatchQueue.main.sync { self?.delaySwitch.isOn ?? false }
                 return fixture(filePath: stubPath!, headers: ["Content-Type":"image/jpeg"])
-                    .requestTime(self.delaySwitch.isOn ? 2.0 : 0.0, responseTime: OHHTTPStubsDownloadSpeedWifi)
+                    .requestTime(useDelay ? 2.0 : 0.0, responseTime: OHHTTPStubsDownloadSpeedWifi)
             }
             imageStub?.name = "Image stub"
         } else {
             // Uninstall
-            OHHTTPStubs.removeStub(imageStub!)
+            HTTPStubs.removeStub(imageStub!)
         }
     }
     
