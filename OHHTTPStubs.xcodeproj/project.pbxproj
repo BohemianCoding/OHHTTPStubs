@@ -790,7 +790,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1150;
-				LastUpgradeCheck = 1150;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = AliSoftware;
 				TargetAttributes = {
 					09110A5019805F4800D175E4 = {
